@@ -1,0 +1,146 @@
+hal(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+hal: Options:   -cdslib /home/vlsi15/RF22EC011/EXP3/cds.lib -logfile hal.log worklib.alu_32bit_tb_case:module.
+hal: Snapshot:  worklib.alu_32bit_tb_case:module.
+hal: Workspace: /home/vlsi15/RF22EC011/EXP3.
+hal: Date: Fri Feb 28 10:29:07 IST 2025.
+
+hal: Running on elaborated SNAPSHOT.....
+
+  ==========================================================================
+Performing lint checks 
+
+halcheck(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+visadev(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+module alu_32bit_tb_case;
+|
+halcheck: *N,IDLENG (./alu_32bit_tb.v,1|0): Identifier name 'alu_32bit_tb_case' is not of appropriate length (4 to 16 characters).
+module alu_32bit_tb_case;
+|
+halcheck: *W,DIFFMN (./alu_32bit_tb.v,1|0): Module name 'alu_32bit_tb_case' differs from file name 'alu_32bit_tb.v'.
+module alu_32bit_tb_case;
+|
+halcheck: *W,NEEDIO (./alu_32bit_tb.v,1|0): Top-level module 'alu_32bit_tb_case' has no inputs/outputs/inouts.
+wire [31:0] y;
+|
+halcheck: *W,STYVAL (./alu_32bit_tb.v,5|0): Numeric value '31' used for identifier 'y'. Use constants to avoid portability issues.
+reg[31:0] a;
+|
+halcheck: *W,STYVAL (./alu_32bit_tb.v,2|0): Numeric value '31' used for identifier 'a'. Use constants to avoid portability issues.
+reg[31:0] b;
+|
+halcheck: *W,STYVAL (./alu_32bit_tb.v,3|0): Numeric value '31' used for identifier 'b'. Use constants to avoid portability issues.
+reg[2:0] f;
+|
+halcheck: *W,STYVAL (./alu_32bit_tb.v,4|0): Numeric value '2' used for identifier 'f'. Use constants to avoid portability issues.
+begin
+|
+halcheck: *W,NOBLKN (./alu_32bit_tb.v,8|0): Each block should be labeled with a meaningful name.
+#50 $finish;
+|
+halcheck: *W,BADSYS (./alu_32bit_tb.v,21|0): System task $finish in module 'alu_32bit_tb_case' is ignored.
+module alu_32bit_case(y, a, b, f);
+|
+halcheck: *W,DIFFMN (./alu_32bit.v,1|0): Module name 'alu_32bit_case' differs from file name 'alu_32bit.v'.
+module alu_32bit_case(y, a, b, f);
+|
+halcheck: *N,PRTCNT (./alu_32bit.v,1|0): Module/Entity 'alu_32bit_case' contains '4' ports.
+halcheck: (./alu_32bit.v,1): Number of Input ports: 3.
+halcheck: (./alu_32bit.v,1): Number of Output ports: 1.
+input[31:0] a;
+|
+halcheck: *W,STYVAL (./alu_32bit.v,2|0): Numeric value '31' used for identifier 'a'. Use constants to avoid portability issues.
+input[31:0] b;
+|
+halcheck: *W,STYVAL (./alu_32bit.v,3|0): Numeric value '31' used for identifier 'b'. Use constants to avoid portability issues.
+input[2:0] f;
+|
+halcheck: *W,STYVAL (./alu_32bit.v,4|0): Numeric value '2' used for identifier 'f'. Use constants to avoid portability issues.
+output reg [31:0] y;
+|
+halcheck: *W,STYVAL (./alu_32bit.v,5|0): Numeric value '31' used for identifier 'y'. Use constants to avoid portability issues.
+begin
+|
+halcheck: *W,NOBLKN (./alu_32bit.v,7|0): Each block should be labeled with a meaningful name.
+3'b100:y=a+b;
+|
+halcheck: *W,LRGOPR (./alu_32bit.v,13|0): Arithmetic or relational operation performed on large operands in module/design-unit test2.
+3'b101:y=a-b;
+|
+halcheck: *W,LRGOPR (./alu_32bit.v,14|0): Arithmetic or relational operation performed on large operands in module/design-unit test2.
+wire [31:0] y;
+|
+halcheck: *W,URDWIR (./alu_32bit_tb.v,5|0): Wire 'y' defined in module 'alu_32bit_tb_case' does not drive any object, but is assigned at least once.
+default:y=32'bx;
+|
+halcheck: *W,EXTENX (./alu_32bit.v,16|0): Extension of 'x' bits in a constant.
+halcheck: Total errors   = 0.
+halcheck: Total warnings = 18.
+
+  ==========================================================================
+Performing synthesizability checks 
+
+cfe64: 15.20.s086..-(): (c) Copyright 1995 - 2020 Cadence Design Systems, Inc.
+cfe64 Build : Mon Dec  7 22:53:08 IST 2020 ldvopt223
+halsynth: Loading design snapshot....
+halsynth: Traversing design hierarchy....
+initial
+|
+halsynth: *W,INIUSP (./alu_32bit_tb.v,7|0): Module alu_32bit_tb_case has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+initial 
+|
+halsynth: *W,INIUSP (./alu_32bit_tb.v,20|0): Module alu_32bit_tb_case has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+halsynth: Total errors   = 0.
+halsynth: Total warnings = 2.
+
+  ==========================================================================
+Performing structural checks 
+
+halstruct(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+visadev(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+alu_32bit_case test2(.y(y), .a(a), .b(b), .f(f));
+|
+halstruct: *W,UNCONO (./alu_32bit_tb.v,6|0): Port 'y' (which is being used as an output) of entity/module 'alu_32bit_case' is being driven inside the design, but not connected (either partially or completely) in its instance 'alu_32bit_tb_case.test2'.
+alu_32bit_case test2(.y(y), .a(a), .b(b), .f(f));
+|
+halstruct: *E,UNCONI (./alu_32bit_tb.v,6|0): Input port 'a' of entity/module 'alu_32bit_case' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'alu_32bit_tb_case.test2'.
+halstruct: (./alu_32bit_tb.v,6): 'a[31:0]' mapped to actual expression 'a' which is undriven.
+alu_32bit_case test2(.y(y), .a(a), .b(b), .f(f));
+|
+halstruct: *E,UNCONI (./alu_32bit_tb.v,6|0): Input port 'b' of entity/module 'alu_32bit_case' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'alu_32bit_tb_case.test2'.
+halstruct: (./alu_32bit_tb.v,6): 'b[31:0]' mapped to actual expression 'b' which is undriven.
+alu_32bit_case test2(.y(y), .a(a), .b(b), .f(f));
+|
+halstruct: *E,UNCONI (./alu_32bit_tb.v,6|0): Input port 'f' of entity/module 'alu_32bit_case' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'alu_32bit_tb_case.test2'.
+halstruct: (./alu_32bit_tb.v,6): 'f[2:0]' mapped to actual expression 'f' which is undriven.
+default:y=32'bx;
+|
+halstruct: *W,SYNPRT (./alu_32bit.v,16|0): Output port 'y' is assigned asynchronously.
+module alu_32bit_tb_case;
+|
+halstruct: *N,NUMDFF (./alu_32bit_tb.v,1|0): Number of single-bit D flip-flops present in the hierarchy is 0.
+halstruct: Design facts generated in 'hal.design_facts'.
+halstruct: Total errors   = 3.
+halstruct: Total warnings = 2.
+
+  ==========================================================================
+
+Analysis summary :
+
+ Errors   : (3)
+  UNCONI (3)     
+
+ Warnings : (22)
+  BADSYS (1)      DIFFMN (2)      EXTENX (1)      INIUSP (2)     
+  LRGOPR (2)      NEEDIO (1)      NOBLKN (2)      STYVAL (8)     
+  SYNPRT (1)      UNCONO (1)      URDWIR (1)     
+
+ Notes    : (3)
+  IDLENG (1)      NUMDFF (1)      PRTCNT (1)     
+
+Analysis complete.
+
+ ==========================================================================
+
+To analyze results, run following command :
+    ncbrowse -64bit -cdslib /home/vlsi15/RF22EC011/EXP3/cds.lib -sortby severity -sortby category -sortby tag hal.log
+
